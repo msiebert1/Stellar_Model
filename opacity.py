@@ -1,8 +1,11 @@
+#opacity.py, author: Matthew Siebert
 import numpy as np
 from scipy import interpolate
 
-
 def read_opacities(myX, myY, myZ):
+	"""Takes an initial composition (myX, myY, myZ) and finds the corresponding opacity table 
+	   in opacity_tables.txt. This function returns a 2D array of the opacities, and 1D arrays
+	   for the temperatures and densities."""
 	f = open('opacity_tables.txt')
 	lines = f.readlines()
 	tables = lines[62:188]
@@ -16,7 +19,6 @@ def read_opacities(myX, myY, myZ):
 		if float(line.split()[5][2:]) == X and float(line.split()[6][2:]) == Y:
 			table_num = line.split()[2]
 
-	print "Using table ", table_num
 	data = lines[241:]
 
 	for i in range(len(data)):

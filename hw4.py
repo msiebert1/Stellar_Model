@@ -1,7 +1,9 @@
+#hw4.py, author: Matthew Siebert
 import numpy as np
 import density_model as dm
 import shoot_routines as sr
 
+#Running this script answers all problems in the 4th problem set
 T6_1 = 10.
 T6_2 = 15.
 T6_3 = 25.
